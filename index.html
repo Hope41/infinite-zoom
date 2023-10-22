@@ -222,6 +222,23 @@
                 if (alpha > 0) alpha -= .007
                 else alpha = 0
 
+                // vignette
+                const size = (cvs.width + cvs.height) / 4
+
+                const grad = ctx.createRadialGradient(
+                    cvs.width / 2,
+                    cvs.height / 2,
+                    size * .3,
+                    cvs.width / 2,
+                    cvs.height / 2,
+                    size)
+
+                grad.addColorStop(0, '#0000')
+                grad.addColorStop(1, '#000')
+
+                ctx.fillStyle = grad
+                ctx.fillRect(0, 0, cvs.width, cvs.height)
+
                 requestAnimationFrame(update)
             }
 
