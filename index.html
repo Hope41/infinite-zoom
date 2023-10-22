@@ -19,6 +19,7 @@
         </style>
     </head>
     <body>
+        <canvas id = cvs></canvas>
         <script>
             'use strict'
             class Map {
@@ -224,7 +225,6 @@
                 requestAnimationFrame(update)
             }
 
-            const cvs = document.createElement('canvas')
             const ctx = cvs.getContext('2d')
 
             const icon_cvs = document.createElement('canvas')
@@ -266,7 +266,6 @@
 
             let alpha = 0
 
-            document.body.appendChild(cvs)
             addEventListener('resize', resize)
             addEventListener('mousemove', move)
             addEventListener('pointerdown', move)
